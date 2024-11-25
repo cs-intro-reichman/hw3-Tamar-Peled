@@ -29,21 +29,26 @@ public class Algebra {
 	// Returns x1 + x2
 	
 	public static int plus(int x1, int x2) {
-		while (x2 < 0) {
-			
-		
-			x1++;
-			x2--;
-			
-		}
+
+	while (x2 != 0) {
+		if (x2 > 0){
+		x1++;
+		x2--;
+	}else{
+		x1--;
+		x2++;
+	}
+}
 
 		return x1;
-	}
+	
+}
 
 
 	// Returns x1 - x2
 	public static int minus (int x1, int x2) {
 		while (x2 != 0){
+
 			if (x2 > 0){
 			x1--;
 			x2--;
