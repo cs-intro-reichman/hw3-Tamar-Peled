@@ -126,10 +126,7 @@ public class Algebra {
 
 		if (x2 == 0) {
 			return 0;
-			
-		}
-
-		else if (x1 < 0 && x2 < 0 ){
+		}else if (x1 < 0 && x2 < 0 ){
 			x1 = -x1;
 			x2 = -x2;
 		}else if  ( x1 < 0 && x2 >0) {
@@ -158,15 +155,13 @@ public class Algebra {
 
 		if (x1 < x2){
 		resultOfMod = x1;
-		}else if (x1 < 0 && x2 > 0){
-			resultOfMod = plus(x1, x2);
-
-		}else if (x1 == x2){
-			resultOfMod = 0;
-
-		}else{
+		}
+		
 		int tempDiv = div(x1, x2);
-		resultOfMod = minus(x1,times(tempDiv, x2));		
+		resultOfMod = minus(x1,times(tempDiv, x2));	
+		
+		if (resultOfMod < 0 ) {
+			resultOfMod = plus(resultOfMod, x2);
 	
 		}
 			
