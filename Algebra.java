@@ -63,14 +63,23 @@ public class Algebra {
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
 		int resultOfTimes = 0;
+		boolean isNegative = false;
 
 			if (x1 == 0 || x2 == 0){
 			return 0;
 			}
 
-			if (x2 < 0){
-			x1 = -x1;
-			x2 = -x2;
+			else if (x2 < 0 && x1 > 0){
+				isNegative = true;
+				x2 = -x2;
+			}
+			else if ( x1 < 0 && x2 > 0 ){
+				isNegative = true;
+				x1 = -x1;
+			}else{
+				x1 = -x1;
+				x2 = -x2;
+
 			}
 
 
@@ -78,9 +87,13 @@ public class Algebra {
 			resultOfTimes =  plus(resultOfTimes,x1);
 			x2--;
 
+				
 			}
 
-		
+			if (isNegative) {
+				resultOfTimes = -resultOfTimes;
+				
+			}
 			
 	
 		return resultOfTimes;
@@ -111,7 +124,12 @@ public class Algebra {
 		int resultOfDiv = 0;
 		boolean isNegative = false;
 
-		if (x1 < 0 && x2 < 0 ){
+		if (x2 == 0) {
+			return 0;
+			
+		}
+
+		else if (x1 < 0 && x2 < 0 ){
 			x1 = -x1;
 			x2 = -x2;
 		}else if  ( x1 < 0 && x2 >0) {
