@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /** Functions for checking if a given string is an anagram. */
 public class Anagram {
 	public static void main(String args[]) {
@@ -28,8 +30,32 @@ public class Anagram {
 
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
-		// Replace the following statement with your code
-		return false;
+		
+		if (str1.length() != str2.length()){
+			return false;
+		}
+
+		String newStr2 = str2;
+
+		for (int i = 0; i < str1.length(); i++){
+			char fromStr1 = str1.charAt(i);
+			boolean foundMatch = false;
+
+			String updateStr2 = "";
+		for (int j = 0; j < newStr2.length(); j++){
+			if (newStr2.charAt(j) == fromStr1 && !foundMatch){
+			foundMatch =true;
+		}else{
+			updateStr2 +=newStr2.charAt(j);
+		}
+	}
+			if (!foundMatch){
+				return false;
+			}
+			newStr2 = updateStr2;			
+			
+		}
+		return true;
 	}
 	   
 	// Returns a preprocessed version of the given string: all the letter characters are converted
@@ -37,13 +63,48 @@ public class Anagram {
 	// as is. For example, the string "What? No way!" becomes "whatnoway"
 	public static String preProcess(String str) {
 		// Replace the following statement with your code
-		return "";
+
+		String newString = "";
+		for (int i = 0; i < str.length(); i++){
+		char letter = str.charAt(i);
+		
+		if (letter >= 'A' && letter <= 'Z'){
+			newString += (char) (letter + 32);
+		}else if (letter >= 'a' && letter <= 'z'){
+			newString +=letter;
+		}
+			
+		}
+		return newString;
 	} 
 	   
 	// Returns a random anagram of the given string. The random anagram consists of the same
 	// characters as the given string, re-arranged in a random order. 
 	public static String randomAnagram(String str) {
-		// Replace the following statement with your code
-		return "";
-	}
+
+		String newStr = preProcess(str);
+		String randomStr ="";
+		
+
+			while (newStr.length() > 0){
+			int randomIndex = (int) (Math.random() * newStr.length());
+
+		
+				randomStr += newStr.charAt(randomIndex);
+
+				String tempString = "";
+				for (int i = 0; i< newStr.length(); i++){
+					if (i != randomIndex){
+					tempString += newStr.charAt(i);
+					}
+				}
+					newStr = tempString;
+				
+			}
+	
+
+		return randomStr;
+	
+		}
+
 }

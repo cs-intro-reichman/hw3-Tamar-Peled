@@ -98,8 +98,6 @@ public class Algebra {
 	}
 
 	// Returns x^n (for n >= 0)
-	
-
 	public static int pow(int x, int n) {
 		int resultOfPow = 1;
 
@@ -122,18 +120,17 @@ public class Algebra {
 		int resultOfDiv = 0;
 		boolean isNegative = false;
 
-		if (x2 == 0) {
+		if (x2 == 0){
 			return 0;
 		
-		}else if  ( x1 < 0 && x2 >0 || x1 > 0 && x2 < 0) {
+		}else if  ( x1 < 0 && x2 >0 || x1 > 0 && x2 < 0){
 			isNegative = true;	
-
 		}
 
 		x1 = x1 < 0 ? -x1 : x1;
 		x2 = x2 < 0 ? -x2 : x2;
 
-		while (x1 >= x2) {
+		while (x1 >= x2){
 			x1 = minus(x1, x2);
 			resultOfDiv = plus(resultOfDiv, 1);			
 		}
@@ -147,7 +144,7 @@ public class Algebra {
 	}
 
 	// Returns x1 % x2
-	public static int mod(int x1, int x2) {
+	public static int mod(int x1, int x2){
 
 		if (x1 < x2){
 			return x1;
@@ -155,7 +152,7 @@ public class Algebra {
 		
 		int resultOfMod = minus(x1,times(div(x1, x2), x2));
 		
-		if (resultOfMod < 0 ) {
+		if (resultOfMod < 0 ){
 			resultOfMod = plus(resultOfMod, x2);
 	
 		}
