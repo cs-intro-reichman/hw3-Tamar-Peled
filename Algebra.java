@@ -148,14 +148,12 @@ public class Algebra {
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
-		int resultOfMod = 0;
 
 		if (x1 < x2){
-		resultOfMod = x1;
+			return x1;
 		}
 		
-		int tempDiv = div(x1, x2);
-		resultOfMod = minus(x1,times(tempDiv, x2));	
+		int resultOfMod = minus(x1,times(div(x1, x2), x2));
 		
 		if (resultOfMod < 0 ) {
 			resultOfMod = plus(resultOfMod, x2);
@@ -169,12 +167,12 @@ public class Algebra {
 	// Returns the integer part of sqrt(x) 
 	public static int sqrt(int x) {
 		int resultOfSqrt = 0;
-		if (x > 0) {
-		resultOfSqrt =  plus(resultOfSqrt,pow(x, div(2, 4)) );
+		int y = 0;
+		while (pow(y, 2) <= x) {
+			resultOfSqrt = y;
+			y =  plus(y, 1);
 		}
 
-
-
-		return 0;
+		return resultOfSqrt;
 	}	  	  
 }
