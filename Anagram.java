@@ -45,8 +45,7 @@ public class Anagram {
 
 		
 		for (int j = 0; j < str2.length(); j++){
-			char fromStr2 = str2.charAt(j);
-			if (fromStr2 == fromStr1){
+			if (str2.charAt(j) == fromStr1){
 				str2 = str2.substring(0, j) + str2.substring(j + 1);
 			foundMatch =true;
 			break;
