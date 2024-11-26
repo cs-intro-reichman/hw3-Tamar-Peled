@@ -69,28 +69,20 @@ public class Algebra {
 			return 0;
 			}
 
-			else if (x2 < 0 && x1 > 0){
+			else if ( x1 < 0 && x2 > 0 || x1 > 0 && x2 < 0){
 				isNegative = true;
-				x2 = -x2;
 			}
-			else if ( x1 < 0 && x2 > 0 ){
-				isNegative = true;
-				x1 = -x1;
-			}else{
-				x1 = -x1;
-				x2 = -x2;
 
-			}
+			x1 = x1 < 0 ? -x1 : x1;
+			x2 = x2 < 0 ? -x2 : x2;
+
 
 
 			while (x2 > 0) {
 			resultOfTimes =  plus(resultOfTimes,x1);
 			x2--;
 
-				
-			}
-
-			if (isNegative) {
+			}if (isNegative) {
 				resultOfTimes = -resultOfTimes;
 				
 			}
