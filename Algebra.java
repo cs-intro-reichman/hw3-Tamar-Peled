@@ -68,6 +68,12 @@ public class Algebra {
 			if (x1 == 0 || x2 == 0){
 			return 0;
 			}
+			if (x1 == 1) {
+				return x2;
+			}if (x2 ==1){
+				return x1;
+				
+			}
 
 			else if ( x1 < 0 && x2 > 0 || x1 > 0 && x2 < 0){
 				isNegative = true;
