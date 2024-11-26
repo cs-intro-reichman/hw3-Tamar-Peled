@@ -37,17 +37,17 @@ public class Anagram {
 			return false;
 		}
 
-		String newStr2 = str2;
+		
 
 		for (int i = 0; i < str1.length(); i++){
 			char fromStr1 = str1.charAt(i);
 			boolean foundMatch = false;
 
-			String updateStr2 = "";
-		for (int j = 0; j < newStr2.length(); j++){
+		
+		for (int j = 0; j < str2.length(); j++){
 			char fromStr2 = str2.charAt(j);
-			if (fromStr2 == fromStr1 && !foundMatch){
-				str2 = str2.substring(0, j) + str2.substring(j, 1);
+			if (fromStr2 == fromStr1){
+				str2 = str2.substring(0, j) + str2.substring(j + 1);
 			foundMatch =true;
 			break;
 			}
