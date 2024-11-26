@@ -74,6 +74,8 @@ public class Anagram {
 			newString += (char) (letter + 32);
 		}else if (letter >= 'a' && letter <= 'z'){
 			newString +=letter;
+		}else if (letter == ' '){
+			newString += letter;
 		}
 			
 		}
