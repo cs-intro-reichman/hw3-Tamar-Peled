@@ -124,16 +124,15 @@ public class Algebra {
 
 		if (x2 == 0) {
 			return 0;
-		}else if (x1 < 0 && x2 < 0 ){
-			x1 = -x1;
-			x2 = -x2;
-		}else if  ( x1 < 0 && x2 >0) {
-			isNegative = true;
-			x1 = -x1;
-		}else{
-			isNegative = true;
-			x2 = -x2;	
+		
+		}else if  ( x1 < 0 && x2 >0 || x1 > 0 && x2 < 0) {
+			isNegative = true;	
+
 		}
+
+		x1 = x1 < 0 ? -x1 : x1;
+		x2 = x2 < 0 ? -x2 : x2;
+
 		while (x1 >= x2) {
 			x1 = minus(x1, x2);
 			resultOfDiv = plus(resultOfDiv, 1);			
