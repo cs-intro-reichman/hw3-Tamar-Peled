@@ -45,16 +45,18 @@ public class Anagram {
 
 			String updateStr2 = "";
 		for (int j = 0; j < newStr2.length(); j++){
-			if (newStr2.charAt(j) == fromStr1 && !foundMatch){
+			char fromStr2 = str2.charAt(j);
+			if (fromStr2 == fromStr1 && !foundMatch){
+				str2 = str2.substring(0, j) + str2.substring(j, 1);
 			foundMatch =true;
-		}else{
-			updateStr2 +=newStr2.charAt(j);
+			break;
+			}
 		}
-	}
+	
 			if (!foundMatch){
 				return false;
 			}
-			newStr2 = updateStr2;			
+				
 			
 		}
 		return true;
