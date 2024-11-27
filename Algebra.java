@@ -79,8 +79,8 @@ public class Algebra {
 				isNegative = true;
 			}
 
-			x1 = x1 < 0 ? -x1 : x1;
-			x2 = x2 < 0 ? -x2 : x2;
+			x1 = x1 < 0 ? minus(0, x1) : x1;
+			x2 = x2 < 0 ? minus(0, x2) : x2;
 
 
 
@@ -89,7 +89,7 @@ public class Algebra {
 			x2--;
 
 			}if (isNegative) {
-				resultOfTimes = -resultOfTimes;
+				resultOfTimes = minus(0, resultOfTimes);
 				
 			}
 			
@@ -127,8 +127,8 @@ public class Algebra {
 			isNegative = true;	
 		}
 
-		x1 = x1 < 0 ? -x1 : x1;
-		x2 = x2 < 0 ? -x2 : x2;
+		x1 = x1 < 0 ? minus(0, x1) : x1;
+		x2 = x2 < 0 ? minus(0, x2) : x2;
 
 		while (x1 >= x2){
 			x1 = minus(x1, x2);
@@ -136,7 +136,7 @@ public class Algebra {
 		}
 
 		if (isNegative){
-			resultOfDiv = -resultOfDiv;
+			resultOfDiv = minus(0, resultOfDiv);
 		}
 		
 		
