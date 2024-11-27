@@ -33,11 +33,6 @@ public class Anagram {
 		str1 = preProcess(str1);
 		str2 =preProcess(str2);
 		
-		if (str1.length() != str2.length()){
-			return false;
-		}
-
-		
 
 		for (int i = 0; i < str1.length(); i++){
 			char fromStr1 = str1.charAt(i);
